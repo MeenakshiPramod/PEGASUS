@@ -1,47 +1,46 @@
 import React, { useState } from 'react';
 import './Slider.css';
 
-const Slider = ({ content }) => {
-  const slides = content?.content || []; // Safely extract the content array
+const Slider = ({ content, onFinish }) => {
+  const slides = content?.content || [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(''); // Tracks direction of the transition
   const [showContent, setShowContent] = useState(true); // Controls visibility of content
 
-  const slideArray = content.content; // Access the array inside the object
-
   // Handle next slide
   const handleNext = () => {
     if (currentIndex < slides.length - 1) {
-      setDirection('right'); // Indicate a right slide
-      setShowContent(false); // Hide content during transition
+      setDirection('right');
+      setShowContent(false);
       setTimeout(() => {
         setCurrentIndex(currentIndex + 1);
-        setShowContent(true); // Show content after transition
-      }, 500); // Timeout to match the transition duration
+        setShowContent(true);
+      }, 500);
+    } else if (currentIndex === slides.length - 1) {
+      // Call onFinish when the last slide is reached
+      onFinish && onFinish();
     }
   };
 
   // Handle previous slide
   const handlePrev = () => {
     if (currentIndex > 0) {
-      setDirection('left'); // Indicate a left slide
-      setShowContent(false); // Hide content during transition
+      setDirection('left');
+      setShowContent(false);
       setTimeout(() => {
-        setCurrentIndex(currentIndex - 1); // Update the index after transition
-        setShowContent(true); // Show content after transition
-      }, 500); // Timeout to match the transition duration
+        setCurrentIndex(currentIndex - 1);
+        setShowContent(true);
+      }, 500);
     }
   };
 
   return (
     <div className="slider-container">
-      {/* Arrow buttons in the same container */}
       <div className="arrow-buttons">
-        <button onClick={handlePrev} className="arrow-btn">❮ </button>
-        <button onClick={handleNext} className="arrow-btn">❯ </button>
+        <button onClick={handlePrev} className="arrow-btn">❮</button>
+        <button onClick={handleNext} className="arrow-btn">❯</button>
       </div>
 
-      {/* Content that slides */}
       <div
         className={`slider-content ${
           direction === 'left'
@@ -51,8 +50,8 @@ const Slider = ({ content }) => {
             : ''
         } ${showContent ? 'show' : ''}`}
       >
-        <p>{slideArray[currentIndex].title}</p>
-        <p>{slideArray[currentIndex].description}</p>
+        <h3>{slides[currentIndex]?.title}</h3>
+        <p>{slides[currentIndex]?.description}</p>
       </div>
     </div>
   );

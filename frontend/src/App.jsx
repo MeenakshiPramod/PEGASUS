@@ -1,20 +1,26 @@
 import React from 'react';
 import TextInputOutput from '../components/textInput/TextInputOutput';
-import ThemeSwitcher from "../components/themeSwitch/ThemeSwitcher"
+import ThemeSwitcher from "../components/themeSwitch/ThemeSwitcher";
 import { ThemeProvider } from '../context/ThemeContext';
-import Navbar  from '../components/navbar/Navbar';
+import Navbar from '../components/navbar/Navbar';
 import Slider from '../components/slider/Slider';
-import content from "../utils/slides.json"
+import Quiz from "../components/Quiz/Quiz"
+import content from "../utils/slides.json";
+
 function App() {
+  const [showQuiz, setShowQuiz] = React.useState(false); // State to track when to show Quiz
 
   return (
     <ThemeProvider>
-      <Navbar/>
+      <Navbar />
       <ThemeSwitcher />
-
-      <TextInputOutput  />
-      <Slider content={content}/>
-     
+      <TextInputOutput />
+      
+      {!showQuiz ? (
+        <Slider content={content} onFinish={() => setShowQuiz(true)} />
+      ) : (
+        <Quiz />
+      )}
     </ThemeProvider>
   );
 }
