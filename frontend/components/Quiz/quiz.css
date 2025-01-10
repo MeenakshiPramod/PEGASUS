@@ -1,49 +1,58 @@
-@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@700&display=swap');
+
 .quiz-container {
-    min-width: 600px;
-    min-height: 400px;
-    margin: auto;
-    padding: 20px;
-    text-align: center;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    border:2px solid black;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    position:absolute;
-    top:25%;
-    left: 45%;
-  }
-  
-  .question-section {
-    margin-bottom: 20px;
-    position: relative;
-    top:150px;
-  }
-  
-  .options-container {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  
-  .option-btn {
-    padding: 10px;
-    border: none;
-    background-color: #46A302;
-    color: white;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: background-color 0.2s;
-  }
-  
-  .option-btn:hover {
-    background-color: #6cdb1e;
-  }
-  
-  .score-section {
-    font-size: 18px;
-    font-family: 'Lexend',Arial, Helvetica, sans-serif;
-    font-weight: 700;
-    color: #333;
-  }
-  
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+  min-width: 600px;
+  min-height: 400px;
+  margin: auto;
+  padding: 20px;
+  text-align: center;
+  background-color: #f9f9f9;
+  border: 2px solid #CCCCCC;
+  box-shadow: 10px 10px yellowgreen;
+  position: absolute;
+  top: 64%;
+  left: 65%;
+  transform: translate(-50%, -50%);
+}
+
+.question-section {
+  position:relative;
+  transform: translateY(50%);
+  margin-bottom: 20px;
+}
+
+.options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.option-btn {
+  padding: 10px;
+  border: none;
+  background-color: #46A302;
+  color: white;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.option-btn:hover {
+  background-color: #6cdb1e;
+}
+
+.score-section {
+  position: absolute;
+  text-align: center;
+  left:20%;
+  top:40%;
+  font-size: 18px;
+  color: #333;
+}
+
+h2, h3, p, button {
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
+  font-weight: 700;
+}
