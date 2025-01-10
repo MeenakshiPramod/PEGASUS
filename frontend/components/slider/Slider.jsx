@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import './Slider.css';
-
+import { useSpeech } from '../../context/SpeechContext';
 const Slider = ({ content, onFinish }) => {
   const slides = content?.content || [];
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(''); // Tracks direction of the transition
   const [showContent, setShowContent] = useState(true); // Controls visibility of content
-
+ const {speak}=useSpeech()
   // Handle next slide
   const handleNext = () => {
     if (currentIndex < slides.length - 1) {
@@ -15,6 +15,8 @@ const Slider = ({ content, onFinish }) => {
       setTimeout(() => {
         setCurrentIndex(currentIndex + 1);
         setShowContent(true);
+        speak(slides[currentIndex].title)
+        speak(slides[currentIndex].description)
       }, 500);
     } else if (currentIndex === slides.length - 1) {
       // Call onFinish when the last slide is reached
@@ -30,6 +32,8 @@ const Slider = ({ content, onFinish }) => {
       setTimeout(() => {
         setCurrentIndex(currentIndex - 1);
         setShowContent(true);
+        speak(slides[currentIndex].title)
+        speak(slides[currentIndex].description)
       }, 500);
     }
   };
