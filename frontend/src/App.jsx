@@ -13,7 +13,7 @@ function App() {
       <ThemeSwitcher />
 
       <TextInputOutput  />
-      <Slider content={contentArray}/>
+      <Slider content={content}/>
      
     </ThemeProvider>
   );
