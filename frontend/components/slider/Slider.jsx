@@ -36,6 +36,7 @@ const Slider = ({ content, onFinish }) => {
 
   return (
     <div className="slider-container">
+      <div className="animation-img"></div>
       <div className="arrow-buttons">
         <button onClick={handlePrev} className="arrow-btn">❮</button>
         <button onClick={handleNext} className="arrow-btn">❯</button>

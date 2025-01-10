@@ -1,15 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 .quiz-container {
-    max-width: 600px;
+    min-width: 600px;
+    min-height: 400px;
     margin: auto;
     padding: 20px;
     text-align: center;
     background-color: #f9f9f9;
     border-radius: 8px;
+    border:2px solid black;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position:absolute;
+    top:25%;
+    left: 45%;
   }
   
   .question-section {
     margin-bottom: 20px;
+    position: relative;
+    top:150px;
   }
   
   .options-container {
@@ -21,7 +29,7 @@
   .option-btn {
     padding: 10px;
     border: none;
-    background-color: #007bff;
+    background-color: #46A302;
     color: white;
     cursor: pointer;
     border-radius: 4px;
@@ -29,12 +37,13 @@
   }
   
   .option-btn:hover {
-    background-color: #0056b3;
+    background-color: #6cdb1e;
   }
   
   .score-section {
     font-size: 18px;
-    font-weight: bold;
+    font-family: 'Lexend',Arial, Helvetica, sans-serif;
+    font-weight: 700;
     color: #333;
   }
   

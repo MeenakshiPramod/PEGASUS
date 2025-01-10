@@ -4,15 +4,24 @@
   justify-content: center;
   align-items: center;
   width: 700px; /* Set width to 600px */
-  height: 100vh; /* Set height to 700px */
+  height: 80vh; /* Set height to 700px */
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
   position: relative; /* Allow for content position control */
   overflow: hidden; /* Hide the overflowing content during transitions */
+  
  left: 40%;
- transform: translateY(-70%);
+ transform: translateY(-87%);
  
+}
+.animation-img{
+  height: 200px;
+  width:98%;
+  border: 2px solid black;
+  position:absolute;
+  top:0;
+  
 }
 
 /* Styles for the arrow buttons container */
@@ -33,7 +42,7 @@
 /* Styles for the arrow buttons */
 .arrow-btn {
   margin:10px;
-  background-color: #007BFF;
+  background-color: #5cd308;
   color: white;
   border: none;
   padding: 10px;
@@ -44,7 +53,7 @@
 }
 
 .arrow-btn:hover {
-  background-color: #0056b3;
+  background-color: #55bf09;
 }
 
 .arrow-btn:focus {
@@ -55,9 +64,12 @@
 .slider-content {
   margin: 0 20px;
   font-size: 18px;
+  font-family: 'Lexend',Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-align: center;
-  width: 100%;
+  width: 80%;
   position: absolute;
+  top:50%;
   transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Add sliding transition */
   opacity: 1;
 }
