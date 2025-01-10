@@ -1,0 +1,27 @@
+.theme-switcher {
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    margin-bottom: 20px;
+  }
+  
+  .theme-button {
+    margin: 0 10px;
+    padding: 10px 15px;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .theme-button:hover {
+    background-color: #bdbdbd;
+    border-color: #999;
+  }
+  
+  .theme-button:focus {
+    outline: none;
+  }
+  
