@@ -22,11 +22,12 @@ const TextInputOutput = () => {
           style={{ color: theme.text, background: theme.background }}
         />
       </div>
-      <div className="output-area">
+      {/* <div className="output-area">
         <p className="text-output" style={{ color: theme.text }}>
         your input:  {text}
         </p>
-      </div>
+      </div> */}
+      
     </div>
   );
 };

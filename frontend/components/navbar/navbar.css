@@ -1,10 +1,13 @@
-/* Navbar container */
+/* Navbar container with gradient background */
+
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background-color: #333;
+  background: linear-gradient(to right, #6cdb1e, #68ed09, #6ee11c, #5cd308, #46A302); /* Gradient from black to blue-grey, yellow-black, and cream-brown */
   color: #fff;
 }
 
@@ -18,8 +21,10 @@
 
 /* Button styling */
 .login {
-  background-color: #4CAF50; /* Green background */
-  color: white;
+  background-color: #f1f1f1 ; /* Green background */
+  color: black;
+  font-family: 'Lexend', Helvetica, sans-serif;
+  font-weight: 400;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
@@ -29,14 +34,6 @@
 }
 
 .login:hover {
-  background-color: #45a049; /* Darker green on hover */
-  transform: scale(1.05); /* Slightly enlarge on hover */
-}
-
-/* Optional: Add a media query for responsiveness */
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    text-align: center;
-  }
+  background-color: #c4ccc3 ; /* Darker green on hover */
+  transform: scale(1.02); /* Slightly enlarge on hover */
 }
