@@ -51,7 +51,8 @@ const Slider = ({ content }) => {
             : ''
         } ${showContent ? 'show' : ''}`}
       >
-        <p>{content[currentIndex]}</p>
+        <p>{slideArray[currentIndex].title}</p>
+        <p>{slideArray[currentIndex].description}</p>
       </div>
     </div>
   );
