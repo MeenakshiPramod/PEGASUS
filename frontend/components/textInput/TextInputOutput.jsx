@@ -11,7 +11,7 @@ const TextInputOutput = () => {
   };
 
   const handleSubmit = () => {
-    console.log("submit");
+    console.log("Submitted Text:", text); // Log the entered text
   };
 
   return (
@@ -25,7 +25,13 @@ const TextInputOutput = () => {
           style={{ color: theme.text, background: theme.background }}
         />
       </div>
-     
+      <button 
+        className="submit-btn" 
+        type="button" 
+        onClick={handleSubmit} // Attach the handleSubmit function
+      >
+        Enter
+      </button>
     </div>
   );
 };

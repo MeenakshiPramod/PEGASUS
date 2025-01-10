@@ -30,7 +30,7 @@
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 50px;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
