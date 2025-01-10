@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './quiz.css'; // Optional: Add CSS for styling
+import './quiz.css'; // Import the updated CSS
 
 const Quiz = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -36,41 +36,6 @@ const Quiz = () => {
       question: "What is the output of 2 + '2' in JavaScript?",
       options: ["22", "4", "Error", "undefined"],
       correctAnswer: "22",
-    },
-    {
-      question: "Which CSS property is used to change text color?",
-      options: ["color", "font-size", "background", "text-align"],
-      correctAnswer: "color",
-    },
-    {
-      question: "What is the function of a loop in programming?",
-      options: [
-        "To repeat a block of code",
-        "To handle errors",
-        "To store data",
-        "To define variables",
-      ],
-      correctAnswer: "To repeat a block of code",
-    },
-    {
-      question: "Which of the following is a JavaScript framework?",
-      options: ["Django", "Flask", "React", "Laravel"],
-      correctAnswer: "React",
-    },
-    {
-      question: "What does the ‘const’ keyword in JavaScript do?",
-      options: [
-        "Declares a block-scoped variable",
-        "Defines a constant that cannot be reassigned",
-        "Creates a global variable",
-        "Declares a function",
-      ],
-      correctAnswer: "Defines a constant that cannot be reassigned",
-    },
-    {
-      question: "Which tag is used to define an unordered list in HTML?",
-      options: ["<ul>", "<ol>", "<li>", "<list>"],
-      correctAnswer: "<ul>",
     },
   ];
 
