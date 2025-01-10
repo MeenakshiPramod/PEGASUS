@@ -6,12 +6,13 @@ import Navbar from '../components/navbar/Navbar';
 import Slider from '../components/slider/Slider';
 import Quiz from "../components/Quiz/Quiz"
 import content from "../utils/slides.json";
-
+import { SpeechProvider } from '../context/SpeechContext';
 function App() {
   const [showQuiz, setShowQuiz] = React.useState(false); // State to track when to show Quiz
 
   return (
     <ThemeProvider>
+      <SpeechProvider>
       <Navbar />
       <ThemeSwitcher />
       <TextInputOutput />
@@ -21,6 +22,7 @@ function App() {
       ) : (
         <Quiz />
       )}
+      </SpeechProvider>
     </ThemeProvider>
   );
 }
