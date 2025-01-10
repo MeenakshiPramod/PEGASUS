@@ -12,8 +12,8 @@ function App() {
       <Navbar/>
       <ThemeSwitcher />
 
-      <TextInputOutput />
-      <Slider content={content}/>
+      <TextInputOutput  />
+      <Slider content={contentArray}/>
      
     </ThemeProvider>
   );
