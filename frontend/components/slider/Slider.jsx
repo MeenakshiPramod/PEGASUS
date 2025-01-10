@@ -26,7 +26,7 @@ const Slider = ({ content }) => {
       setDirection('left'); // Indicate a left slide
       setShowContent(false); // Hide content during transition
       setTimeout(() => {
-        setCurrentIndex(currentIndex - 1);
+        setCurrentIndex(currentIndex - 1); // Update the index after transition
         setShowContent(true); // Show content after transition
       }, 500); // Timeout to match the transition duration
     }
@@ -34,18 +34,24 @@ const Slider = ({ content }) => {
 
   return (
     <div className="slider-container">
-      
-
-      <div
-        className={`slider-content ${direction === 'left' ? 'slide-left' : direction === 'right' ? 'slide-right' : ''} ${
-          showContent ? 'show' : ''
-        }`}
-      >
-        <h3>{slideArray[currentIndex]?.title}</h3>
-        <p>{slideArray[currentIndex]?.description}</p>
+      {/* Arrow buttons in the same container */}
+      <div className="arrow-buttons">
+        <button onClick={handlePrev} className="arrow-btn">❮ prev</button>
+        <button onClick={handleNext} className="arrow-btn">❯ next</button>
       </div>
-      <button onClick={handlePrev} className="arrow-btn">❮ prev</button>
-      <button onClick={handleNext} className="arrow-btn">❯ next</button>
+
+      {/* Content that slides */}
+      <div
+        className={`slider-content ${
+          direction === 'left'
+            ? 'slide-left'
+            : direction === 'right'
+            ? 'slide-right'
+            : ''
+        } ${showContent ? 'show' : ''}`}
+      >
+        <p>{content[currentIndex]}</p>
+      </div>
     </div>
   );
 };

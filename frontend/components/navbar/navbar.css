@@ -14,7 +14,8 @@
 /* Brand/Logo styling */
 .navbar .brand {
   font-size: 1.5rem;
-  font-weight: bold;
+  font-family: 'Lexend',Arial, Helvetica, sans-serif;
+  font-weight: 700;
   text-decoration: none;
   color: #fff;
 }
@@ -24,7 +25,7 @@
   background-color: #f1f1f1 ; /* Green background */
   color: black;
   font-family: 'Lexend', Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   border: none;
   padding: 10px 20px;
   font-size: 1rem;
