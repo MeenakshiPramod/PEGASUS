@@ -2,15 +2,16 @@ import React, { useState } from 'react';
 import './Slider.css';
 
 const Slider = ({ content }) => {
+  const slides = content?.content || []; // Safely extract the content array
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState(''); // Tracks direction of the transition
   const [showContent, setShowContent] = useState(true); // Controls visibility of content
 
   const slideArray = content.content; // Access the array inside the object
-console.log(slideArray)
+
   // Handle next slide
   const handleNext = () => {
-    if (currentIndex < slideArray.length - 1) {
+    if (currentIndex < slides.length - 1) {
       setDirection('right'); // Indicate a right slide
       setShowContent(false); // Hide content during transition
       setTimeout(() => {
@@ -50,8 +51,7 @@ console.log(slideArray)
             : ''
         } ${showContent ? 'show' : ''}`}
       >
-        <p>{slideArray[currentIndex].title}</p>
-        <p>{slideArray[currentIndex].description}</p>
+        <p>{content[currentIndex]}</p>
       </div>
     </div>
   );
