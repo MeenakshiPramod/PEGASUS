@@ -1,0 +1,67 @@
+.slider-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 600px; /* Set width to 600px */
+    height: 700px; /* Set height to 700px */
+    padding: 20px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    position: relative; /* Allow for content position control */
+    overflow: hidden; /* Hide the overflowing content during transitions */
+  }
+  
+  .arrow-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    position: absolute; /* Position arrows outside the content */
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .arrow-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .arrow-btn:focus {
+    outline: none;
+  }
+  
+  .arrow-btn:first-of-type {
+    left: 10px; /* Position the left arrow */
+  }
+  
+  .arrow-btn:last-of-type {
+    right: 10px; /* Position the right arrow */
+  }
+  
+  .slider-content {
+    margin: 0 20px;
+    font-size: 18px;
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Add sliding transition */
+  }
+  
+  .slide-left {
+    transform: translateX(-100%); /* Slide content to the left */
+    opacity: 0; /* Fade out the previous content */
+  }
+  
+  .slide-right {
+    transform: translateX(100%); /* Slide content to the right */
+    opacity: 0; /* Fade out the previous content */
+  }
+  
+  .show {
+    transform: translateX(0); /* Show content at original position */
+    opacity: 1; /* Make content visible */
+  }
+  
