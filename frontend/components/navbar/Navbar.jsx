@@ -1,22 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import './navbar.css';
 
 function Navbar() {
   return (
     <>
       <nav className="navbar">
-        <Link to="/" className="brand">MyBrand</Link>
-        
-     {/* <ul className="nav-links">
-          <li><Link to="/home">Home</Link></li> 
-          <li><Link to="/about">About</Link></li> 
-          <li><Link to="/services">Services</Link></li> 
-          <li><Link to="/contact">Contact</Link></li> 
-        </ul> */}
-        
+        <a href="/" className="brand">MyBrand</a>  {/* Use a tag with href */}
 
-        <button classNmae="login">login</button>
+        <ul className="nav-links">
+          <li><a href="#home">Home</a></li> 
+          <li><a href="#about">About</a></li> 
+          <li><a href="#services">Services</a></li> 
+          <li><a href="#contact">Contact</a></li> 
+        </ul>
+
+        <button className="login">Login</button>
       </nav>
     </>
   );

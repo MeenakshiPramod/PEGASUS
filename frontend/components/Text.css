@@ -1,0 +1,51 @@
+.container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+  }
+  
+  .input-area {
+    width: 30%;
+    padding: 10px;
+    border-right: 2px solid #ddd;
+  }
+  
+  .output-area {
+    width: 70%;
+    padding: 10px;
+  }
+  
+  .text-input {
+    width: 100%;
+    height: 100%;
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'OpenDyslexic', Arial, sans-serif;
+    padding: 10px;
+    border: 1px solid #ccc;
+    resize: none;
+    outline: none;
+  }
+  
+  .text-output {
+    font-size: 18px;
+    line-height: 1.6;
+    font-family: 'OpenDyslexic', Arial, sans-serif;
+    white-space: pre-wrap;
+  }
+  
+  .theme-switcher {
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+  }
+  
+  .theme-switcher button {
+    margin: 0 5px;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
