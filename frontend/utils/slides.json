@@ -1,0 +1,55 @@
+{
+    "content": [
+      {
+        "id": 1,
+        "title": "Understanding the Basics of Programming",
+        "description": "This content introduces the fundamentals of programming, including variables, data types, and control structures."
+      },
+      {
+        "id": 2,
+        "title": "Introduction to Web Development",
+        "description": "Learn about the essentials of web development, including HTML, CSS, and JavaScript to build interactive websites."
+      },
+      {
+        "id": 3,
+        "title": "Database Management and SQL",
+        "description": "This section covers relational database management systems, querying with SQL, and organizing data for web applications."
+      },
+      {
+        "id": 4,
+        "title": "Understanding Object-Oriented Programming",
+        "description": "Dive into object-oriented programming concepts such as classes, objects, inheritance, and polymorphism."
+      },
+      {
+        "id": 5,
+        "title": "Learning Data Structures and Algorithms",
+        "description": "Explore important data structures like arrays, linked lists, and trees, along with algorithms to solve computational problems efficiently."
+      },
+      {
+        "id": 6,
+        "title": "Introduction to Machine Learning",
+        "description": "Learn the basics of machine learning, including supervised and unsupervised learning, and popular algorithms like linear regression."
+      },
+      {
+        "id": 7,
+        "title": "Web Security Essentials",
+        "description": "Understand the importance of web security, focusing on concepts like encryption, authentication, and common vulnerabilities."
+      },
+      {
+        "id": 8,
+        "title": "Mobile App Development",
+        "description": "This content provides an overview of mobile app development, focusing on cross-platform development and popular frameworks."
+      },
+      {
+        "id": 9,
+        "title": "Cloud Computing and DevOps",
+        "description": "Learn about cloud computing services, DevOps practices, and how to deploy scalable web applications using cloud platforms."
+      },
+      {
+        "id": 10,
+        "title": "Introduction to Blockchain and Cryptography",
+        "description": "This section covers blockchain technology, cryptography, and their real-world applications in digital transactions and data security."
+      }
+    ]
+  }
+  

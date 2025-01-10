@@ -6,9 +6,11 @@ const Slider = ({ content }) => {
   const [direction, setDirection] = useState(''); // Tracks direction of the transition
   const [showContent, setShowContent] = useState(true); // Controls visibility of content
 
+  const slideArray = content.content; // Access the array inside the object
+
   // Handle next slide
   const handleNext = () => {
-    if (currentIndex < content.length - 1) {
+    if (currentIndex < slideArray.length - 1) {
       setDirection('right'); // Indicate a right slide
       setShowContent(false); // Hide content during transition
       setTimeout(() => {
