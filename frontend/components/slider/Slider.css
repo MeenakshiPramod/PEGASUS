@@ -3,15 +3,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px; /* Set width to 600px */
+  width: 700px; /* Set width to 600px */
   height: 100vh; /* Set height to 700px */
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
   position: relative; /* Allow for content position control */
   overflow: hidden; /* Hide the overflowing content during transitions */
- left: 50%;
- bottom: 20%;
+ left: 40%;
+ transform: translateY(-70%);
  
 }
 

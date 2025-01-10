@@ -1,5 +1,5 @@
 import React from 'react';
-import TextInputOutput from '../components/TextInputOutput';
+import TextInputOutput from '../components/textInput/TextInputOutput';
 import ThemeSwitcher from "../components/ThemeSwitcher";
 import { ThemeProvider } from '../context/ThemeContext';
 import Navbar  from '../components/navbar/Navbar';
@@ -13,7 +13,7 @@ function App() {
       <ThemeSwitcher />
 
       <TextInputOutput  />
-      <Slider content={contentArray}/>
+      <Slider content={content}/>
      
     </ThemeProvider>
   );

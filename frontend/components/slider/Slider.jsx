@@ -7,7 +7,7 @@ const Slider = ({ content }) => {
   const [showContent, setShowContent] = useState(true); // Controls visibility of content
 
   const slideArray = content.content; // Access the array inside the object
-
+console.log(slideArray)
   // Handle next slide
   const handleNext = () => {
     if (currentIndex < slideArray.length - 1) {
@@ -50,7 +50,8 @@ const Slider = ({ content }) => {
             : ''
         } ${showContent ? 'show' : ''}`}
       >
-        <p>{content[currentIndex]}</p>
+        <p>{slideArray[currentIndex].title}</p>
+        <p>{slideArray[currentIndex].description}</p>
       </div>
     </div>
   );
