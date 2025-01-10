@@ -34,8 +34,8 @@ const Slider = ({ content }) => {
     <div className="slider-container">
       {/* Arrow buttons in the same container */}
       <div className="arrow-buttons">
-        <button onClick={handlePrev} className="arrow-btn">❮ prev</button>
-        <button onClick={handleNext} className="arrow-btn">❯ next</button>
+        <button onClick={handlePrev} className="arrow-btn">❮ </button>
+        <button onClick={handleNext} className="arrow-btn">❯ </button>
       </div>
 
       {/* Content that slides */}
