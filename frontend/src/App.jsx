@@ -1,6 +1,6 @@
 import React from 'react';
 import TextInputOutput from '../components/textInput/TextInputOutput';
-import ThemeSwitcher from "../components/ThemeSwitcher";
+import ThemeSwitcher from "../components/themeSwitch/ThemeSwitcher"
 import { ThemeProvider } from '../context/ThemeContext';
 import Navbar  from '../components/navbar/Navbar';
 import Slider from '../components/slider/Slider';
