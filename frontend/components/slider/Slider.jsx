@@ -9,9 +9,7 @@ const Slider = ({ content, onFinish }) => {
   const [showContent, setShowContent] = useState(true);
   const { speak } = useSpeech();
 
-  const generateImageUrl = (title) => {
-    return `https://res.cloudinary.com/dxp115bum/image/upload/l_text:arial_50:${encodeURIComponent(title)},co_rgb:ffffff,g_south,y_30,b_white/v1676589641/sample.jpg`;
-  };
+
 
   const handleNext = () => {
     if (currentIndex < slides.length - 1) {
@@ -45,7 +43,7 @@ const Slider = ({ content, onFinish }) => {
     <div className="slider-container">
       <div className="animation-img">
         {/* Dynamically generated image for each title */}
-        <img src={generateImageUrl(slides[currentIndex]?.title)} alt={slides[currentIndex]?.title} />
+        <img src={"/img.png"} alt={slides[currentIndex]?.title} />
       </div>
       <div className="arrow-buttons">
         <button onClick={handlePrev} className="arrow-btn">❮</button>
