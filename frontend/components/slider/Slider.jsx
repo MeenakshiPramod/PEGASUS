@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import './Slider.css';
 import { useSpeech } from '../../context/SpeechContext';
-
-const Slider = ({ content, onFinish }) => {
+import array from "../../src/assets/array.gif.mp4"
+const Slider = ({ content, onFinish, topic }) => {
   const slides = content; // Array of slides passed as props
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState('');
@@ -40,11 +40,26 @@ const Slider = ({ content, onFinish }) => {
   // Calculate progress percentage
   const progress = ((currentIndex + 1) / slides.length) * 100;
 
+  // Define gifUrls with video sources
+  const gifUrls = {
+    array: "../../src/assets/array.gif.mp4",
+    linkedlist: "../../src/assets/linkedlist.gif",
+    queue: "../../src/assets/queue.gif.mp4",
+    stack: "../../src/assets/stack.gif.mp4",
+  };
+
   return (
     <div className="slider-container">
-      {/* Dynamic Image */}
-      <div className="animation-img">
-        <img src="/img.png" alt={slides[currentIndex]?.title} />
+      {/* Dynamic Video */}
+      <div className="animation-video">
+        <video style={{width:"300px",height:"200px"}}
+          src={gifUrls[topic]||"../../src/assets/array.gif.mp4"}
+      // Fallback video if topic doesn't match
+          alt={slides[currentIndex]?.title}
+          autoPlay
+          loop
+          muted
+        />
       </div>
 
       {/* Progress Bar */}
