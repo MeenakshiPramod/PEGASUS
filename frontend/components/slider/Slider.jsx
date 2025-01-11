@@ -38,7 +38,8 @@ const Slider = ({ content, onFinish }) => {
       }, 500);
     }
   };
-
+ 
+  
   return (
     <div className="slider-container">
       <div className="animation-img">
