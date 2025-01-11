@@ -3,13 +3,13 @@ import './Slider.css';
 import { useSpeech } from '../../context/SpeechContext';
 
 const Slider = ({ content, onFinish }) => {
-  const slides = content?.content || [];
+  console.log(content);  // Ensure content is passed correctly
+  const slides = content 
+  console.log(slides)
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState('');
   const [showContent, setShowContent] = useState(true);
   const { speak } = useSpeech();
-
-
 
   const handleNext = () => {
     if (currentIndex < slides.length - 1) {
@@ -22,7 +22,7 @@ const Slider = ({ content, onFinish }) => {
         speak(`${slides[nextIndex]?.title}. ${slides[nextIndex]?.description}`);
       }, 500);
     } else if (currentIndex === slides.length - 1) {
-      onFinish && onFinish();
+      onFinish && onFinish();  // Call onFinish when the last slide is reached
     }
   };
 
