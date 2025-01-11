@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useTheme } from "../../context/ThemeContext";
 import "./Text.css";
 
-const TextInputOutput = () => {
+const TextInputOutput = ({ setTopic }) => {
   const { theme } = useTheme();
   const [text, setText] = useState("");    
 
@@ -12,6 +12,7 @@ const TextInputOutput = () => {
 
   const handleSubmit = () => {
     console.log("Submitted Text:", text); // Log the entered text
+    setTopic(text);  // Pass the entered text to the parent component (App.js)
   };
 
   return (
