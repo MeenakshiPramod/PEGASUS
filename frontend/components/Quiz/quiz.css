@@ -10,7 +10,7 @@
   text-align: center;
   background-color: #f9f9f9;
   border: 2px solid #CCCCCC;
-  box-shadow: 10px 10px yellowgreen;
+  box-shadow: 10px 10px #bb86fc;
   position: absolute;
   top: 64%;
   left: 65%;
@@ -32,15 +32,17 @@
 .option-btn {
   padding: 10px;
   border: none;
-  background-color: #46A302;
+  background-color: #bb86fc;
   color: white;
   cursor: pointer;
+  box-shadow: 0 0.375em 0 #986ccd;
+  border:2px solid transparent;
   border-radius: 4px;
   transition: background-color 0.2s;
 }
 
 .option-btn:hover {
-  background-color: #6cdb1e;
+  background-color: #a576df;
 }
 
 .score-section {

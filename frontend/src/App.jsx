@@ -7,6 +7,7 @@ import Slider from '../components/slider/Slider';
 import Quiz from "../components/Quiz/Quiz"
 import content from "../utils/slides.json";
 import { SpeechProvider } from '../context/SpeechContext';
+import './App.css'
 function App() {
   const [showQuiz, setShowQuiz] = React.useState(false); // State to track when to show Quiz
 

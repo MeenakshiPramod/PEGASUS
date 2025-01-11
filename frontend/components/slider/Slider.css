@@ -42,9 +42,10 @@
 /* Styles for the arrow buttons */
 .arrow-btn {
   margin:10px;
-  background-color: #5cd308;
+  background-color: #bb86fc;
   color: white;
-  border: none;
+  box-shadow: 0 0.375em 0 #986ccd;
+  border:2px solid transparent;
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
@@ -53,7 +54,7 @@
 }
 
 .arrow-btn:hover {
-  background-color: #55bf09;
+  background-color: #a879e2;
 }
 
 .arrow-btn:focus {

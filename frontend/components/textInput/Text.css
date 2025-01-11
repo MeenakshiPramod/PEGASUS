@@ -30,7 +30,7 @@
     font-family: 'OpenDyslexic', Arial, sans-serif;
     padding: 10px;
     border: 2px solid #ccc;
-    box-shadow: 10px 10px yellowgreen;
+    box-shadow: 10px 10px #bb86fc;
     resize: none;
     outline: none;
   }
@@ -40,7 +40,9 @@
     font-weight: 700px;
     color: white;
     cursor: pointer;
-    background-color:#5cd308 ;
+    background-color:#bb86fc ;
+    box-shadow: 0 0.375em 0 #986ccd;
+    border:2px solid transparent;
     border-radius: 50px;
     position:absolute;
     width: 120px;

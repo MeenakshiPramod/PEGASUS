@@ -7,7 +7,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
-  background: linear-gradient(to right, #6cdb1e, #68ed09, #6ee11c, #5cd308, #46A302); /* Gradient from black to blue-grey, yellow-black, and cream-brown */
+  background: linear-gradient(to right, #c8ade8, #be9ce8, #b990eb, #b586ee, #bb86fc); /* Gradient from black to blue-grey, yellow-black, and cream-brown */
   color: #fff;
 }
 
@@ -26,7 +26,8 @@
   color: black;
   font-family: 'Lexend', Helvetica, sans-serif;
   font-weight: 700;
-  border: none;
+  box-shadow: 0 0.375em 0 #dddcdc;
+  border:2px solid transparent;
   padding: 10px 20px;
   font-size: 1rem;
   cursor: pointer;

@@ -9,9 +9,12 @@
   .theme-button {
     margin: 0 10px;
     padding: 10px 15px;
-    border: 2px solid transparent;
+    border: 2px solid #9c6ed3;
     border-radius: 5px;
-    background-color: #f0f0f0;
+    color: white;
+    background-color: #bb86fc;
+    box-shadow: 0 0.375em 0 #a576de;
+  
     font-family: 'Lexend ',Arial, Helvetica, sans-serif;
     font-weight: 700;
     font-size: 14px;
@@ -20,8 +23,8 @@
   }
   
   .theme-button:hover {
-    background-color: #bdbdbd;
-    border-color: #999;
+    background-color: #ac7be8;
+    border-color: #9265c8;
   }
   
   .theme-button:focus {
