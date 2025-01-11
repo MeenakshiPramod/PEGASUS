@@ -14,7 +14,7 @@ function App() {
   const [loading, setLoading] = useState(true);  // Loading state to show until data is fetched
   const [quiz, setQuiz] = useState();
   const [topic, setTopic] = useState("Basics of Computer Science"); // State to manage the topic
-   const [url,setUrl]=useState("")
+   const [url,setUrl]=useState()
 
   const gifUrls = {
     array: "/assets/array.gif.mp4",
@@ -69,7 +69,7 @@ function App() {
   useEffect(() => {
     handleNotes();
     handleQuiz();
-  
+  setUrl(topic)
   }, [topic]);
 
   // Convert notes object to an array of modules
@@ -87,7 +87,7 @@ function App() {
         
         {/* Display notes */}
         {!loading && notes && (
-          <Slider content={notesArray} onFinish={() => setShowQuiz(true) }/>
+          <Slider content={notesArray} onFinish={() => setShowQuiz(true) } topic={url.toLocaleLowerCase()}/>
         )}
         {showQuiz && <Quiz content={quiz} />}
       </SpeechProvider>
