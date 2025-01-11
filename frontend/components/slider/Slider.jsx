@@ -1,46 +1,52 @@
 import React, { useState } from 'react';
 import './Slider.css';
 import { useSpeech } from '../../context/SpeechContext';
+
 const Slider = ({ content, onFinish }) => {
   const slides = content?.content || [];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState(''); // Tracks direction of the transition
-  const [showContent, setShowContent] = useState(true); // Controls visibility of content
- const {speak}=useSpeech()
-  // Handle next slide
+  const [direction, setDirection] = useState('');
+  const [showContent, setShowContent] = useState(true);
+  const { speak } = useSpeech();
+
+  const generateImageUrl = (title) => {
+    return `https://res.cloudinary.com/dxp115bum/image/upload/l_text:arial_50:${encodeURIComponent(title)},co_rgb:ffffff,g_south,y_30,b_white/v1676589641/sample.jpg`;
+  };
+
   const handleNext = () => {
     if (currentIndex < slides.length - 1) {
       setDirection('right');
       setShowContent(false);
       setTimeout(() => {
-        setCurrentIndex(currentIndex + 1);
+        const nextIndex = currentIndex + 1;
+        setCurrentIndex(nextIndex);
         setShowContent(true);
-        speak(slides[currentIndex].title)
-        speak(slides[currentIndex].description)
+        speak(`${slides[nextIndex]?.title}. ${slides[nextIndex]?.description}`);
       }, 500);
     } else if (currentIndex === slides.length - 1) {
-      // Call onFinish when the last slide is reached
       onFinish && onFinish();
     }
   };
 
-  // Handle previous slide
   const handlePrev = () => {
     if (currentIndex > 0) {
       setDirection('left');
       setShowContent(false);
       setTimeout(() => {
-        setCurrentIndex(currentIndex - 1);
+        const prevIndex = currentIndex - 1;
+        setCurrentIndex(prevIndex);
         setShowContent(true);
-        speak(slides[currentIndex].title)
-        speak(slides[currentIndex].description)
+        speak(`${slides[prevIndex]?.title}. ${slides[prevIndex]?.description}`);
       }, 500);
     }
   };
 
   return (
     <div className="slider-container">
-      <div className="animation-img"></div>
+      <div className="animation-img">
+        {/* Dynamically generated image for each title */}
+        <img src={generateImageUrl(slides[currentIndex]?.title)} alt={slides[currentIndex]?.title} />
+      </div>
       <div className="arrow-buttons">
         <button onClick={handlePrev} className="arrow-btn">❮</button>
         <button onClick={handleNext} className="arrow-btn">❯</button>
