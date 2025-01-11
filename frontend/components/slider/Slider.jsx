@@ -3,9 +3,7 @@ import './Slider.css';
 import { useSpeech } from '../../context/SpeechContext';
 
 const Slider = ({ content, onFinish }) => {
-  console.log(content);  // Ensure content is passed correctly
-  const slides = content 
-  console.log(slides)
+  const slides = content; // Array of slides passed as props
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState('');
   const [showContent, setShowContent] = useState(true);
@@ -22,7 +20,7 @@ const Slider = ({ content, onFinish }) => {
         speak(`${slides[nextIndex]?.title}. ${slides[nextIndex]?.description}`);
       }, 500);
     } else if (currentIndex === slides.length - 1) {
-      onFinish && onFinish();  // Call onFinish when the last slide is reached
+      onFinish && onFinish(); // Call onFinish when the last slide is reached
     }
   };
 
@@ -38,19 +36,32 @@ const Slider = ({ content, onFinish }) => {
       }, 500);
     }
   };
- 
-  
+
+  // Calculate progress percentage
+  const progress = ((currentIndex + 1) / slides.length) * 100;
+
   return (
     <div className="slider-container">
+      {/* Dynamic Image */}
       <div className="animation-img">
-        {/* Dynamically generated image for each title */}
-        <img src={"/img.png"} alt={slides[currentIndex]?.title} />
+        <img src="/img.png" alt={slides[currentIndex]?.title} />
       </div>
+
+      {/* Progress Bar */}
+      <div className="progress-bar">
+        <div
+          className="progress-fill"
+          style={{ width: `${progress}%` }}
+        ></div>
+      </div>
+
+      {/* Arrow Buttons */}
       <div className="arrow-buttons">
         <button onClick={handlePrev} className="arrow-btn">❮</button>
         <button onClick={handleNext} className="arrow-btn">❯</button>
       </div>
 
+      {/* Slider Content */}
       <div
         className={`slider-content ${
           direction === 'left'
