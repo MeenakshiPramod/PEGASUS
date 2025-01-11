@@ -1,49 +1,64 @@
 import React, { useState } from 'react';
-import './quiz.css'; // Import the updated CSS
+import './quiz.css'; // Import your CSS file
 
-const Quiz = () => {
+const Quiz = ({ content }) => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [showScore, setShowScore] = useState(false);
 
-  const questions = [
-    {
-      question: "What is the purpose of a variable in programming?",
-      options: ["To store data", "To perform calculations", "To display output", "To define functions"],
-      correctAnswer: "To store data",
-    },
-    {
-      question: "Which programming language is primarily used for web development?",
-      options: ["Python", "JavaScript", "C++", "Java"],
-      correctAnswer: "JavaScript",
-    },
-    {
-      question: "What does HTML stand for?",
-      options: [
-        "HyperText Markup Language",
-        "Hyperlink Text Markup Language",
-        "Home Tool Markup Language",
-        "HyperTool Markup Language",
-      ],
-      correctAnswer: "HyperText Markup Language",
-    },
-    {
-      question: "Which of the following is not a programming language?",
-      options: ["Ruby", "Python", "HTML", "Java"],
-      correctAnswer: "HTML",
-    },
-    {
-      question: "What is the output of 2 + '2' in JavaScript?",
-      options: ["22", "4", "Error", "undefined"],
-      correctAnswer: "22",
-    },
-  ];
-
+  // Make sure content is passed correctly
+  // const questions = [
+  //   {
+  //     "question": "What is a computer?",
+  //     "options": [
+  //       "A machine that can draw pictures",
+  //       "A machine that can do math",
+  //       "A machine that can talk to you",
+  //       "A machine that can follow instructions"
+  //     ],
+  //     "correct_answer": "A machine that can follow instructions"
+  //   },
+  //   {
+  //     "question": "What is a program?",
+  //     "options": [
+  //       "A set of instructions for a computer",
+  //       "A game you play on a computer",
+  //       "A picture you make on a computer",
+  //       "A song you listen to on a computer"
+  //     ],
+  //     "correct_answer": "A set of instructions for a computer"
+  //   },
+  //   {
+  //     "question": "What is a file?",
+  //     "options": [
+  //       "A collection of information stored on a computer",
+  //       "A program that runs on a computer",
+  //       "A picture you can see on a computer",
+  //       "A sound you can hear on a computer"
+  //     ],
+  //     "correct_answer": "A collection of information stored on a computer"
+  //   },
+  //   {
+  //     "question": "What is the Internet?",
+  //     "options": [
+  //       "A way to connect computers",
+  //       "A place to buy things",
+  //       "A place to watch videos",
+  //       "A place to play games"
+  //     ],
+  //     "correct_answer": "A way to connect computers"
+  //   }
+  // ]
+  const questions=JSON.parse(content);
+console.log(typeof questions,"::",)
+  // Handle answer selection
   const handleAnswer = (selectedOption) => {
-    if (selectedOption === questions[currentQuestionIndex].correctAnswer) {
+    // Check if the selected option is correct
+    if (selectedOption === questions[currentQuestionIndex].correct_answer) {
       setScore(score + 1);
     }
 
+    // Go to next question or show score
     const nextQuestionIndex = currentQuestionIndex + 1;
     if (nextQuestionIndex < questions.length) {
       setCurrentQuestionIndex(nextQuestionIndex);

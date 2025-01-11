@@ -13,7 +13,7 @@ function App() {
   const [showQuiz, setShowQuiz] = useState(false); // State to track when to show Quiz
   const [notes, setNotes] = useState("");  // State to store notes
   const [loading, setLoading] = useState(true);  // Loading state to show until data is fetched
-
+  const [quiz,setQuiz]=useState()
   // Function to fetch notes from the Flask API
   const handleNotes = async () => {
     try {
@@ -46,10 +46,11 @@ const result=await axios.post("http://127.0.0.1:5000/generate-quiz", {
         topic: "Basics of Computer Science",
       })
       
-      console.log(result.data.quiz)
+    
       let res=result.data.quiz
-      const cleanResponse = res.slice(7, -4).trim();
+      const cleanResponse = res.slice(8, -4).trim();
       console.log(cleanResponse)
+      setQuiz(cleanResponse);
   }
   // Fetch notes on component mount
   useEffect(() => {
@@ -74,7 +75,7 @@ const result=await axios.post("http://127.0.0.1:5000/generate-quiz", {
         {!loading && notes && (
           <Slider content={notesArray} onFinish={() => setShowQuiz(true)} />
         )}
-        {showQuiz && <Quiz />}
+        {showQuiz && <Quiz  content={quiz}/>}
       </SpeechProvider>
     </ThemeProvider>
   );
