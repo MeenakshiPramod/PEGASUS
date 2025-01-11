@@ -11,7 +11,8 @@ const TextInputOutput = ({ setTopic }) => {
   };
 
   const handleSubmit = () => {
-    console.log("Submitted Text:", text); // Log the entered text
+    console.log("Submitted Text:", text);
+     // Log the entered text
     setTopic(text);  // Pass the entered text to the parent component (App.js)
   };
 

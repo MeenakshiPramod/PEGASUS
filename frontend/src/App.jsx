@@ -14,7 +14,19 @@ function App() {
   const [loading, setLoading] = useState(true);  // Loading state to show until data is fetched
   const [quiz, setQuiz] = useState();
   const [topic, setTopic] = useState("Basics of Computer Science"); // State to manage the topic
+   const [url,setUrl]=useState("")
 
+  const gifUrls = {
+    array: "/assets/array.gif.mp4",
+    linkedlist: "/assets/linkedlist.gif",
+    queue: "/assets/queue.gif.mp4",
+    stack: "/assets/stack.gif.mp4",
+  };
+   const getGifUrl = () => {
+    const topicKey = topic.toLowerCase().replace(/\s/g, ''); // Clean topic for matching keys
+    return gifUrls[topicKey] || gifUrls["array"]; // Default to "array.gif" if no match
+  };
+   
   // Function to fetch notes from the Flask API
   const handleNotes = async () => {
     try {
@@ -49,7 +61,7 @@ function App() {
 
     let res = result.data.quiz;
     const cleanResponse = res.slice(8, -4).trim();
-    console.log(cleanResponse);
+   
     setQuiz(cleanResponse);
   };
 
@@ -57,6 +69,7 @@ function App() {
   useEffect(() => {
     handleNotes();
     handleQuiz();
+  
   }, [topic]);
 
   // Convert notes object to an array of modules
@@ -74,7 +87,7 @@ function App() {
         
         {/* Display notes */}
         {!loading && notes && (
-          <Slider content={notesArray} onFinish={() => setShowQuiz(true)} />
+          <Slider content={notesArray} onFinish={() => setShowQuiz(true) }/>
         )}
         {showQuiz && <Quiz content={quiz} />}
       </SpeechProvider>
