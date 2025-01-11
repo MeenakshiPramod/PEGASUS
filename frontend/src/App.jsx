@@ -45,12 +45,16 @@ function App() {
 const result=await axios.post("http://127.0.0.1:5000/generate-quiz", {
         topic: "Basics of Computer Science",
       })
-      console.log(result)
+      
+      console.log(result.data.quiz)
+      let res=result.data.quiz
+      const cleanResponse = res.slice(7, -4).trim();
+      console.log(cleanResponse)
   }
   // Fetch notes on component mount
   useEffect(() => {
     handleNotes();
-    handleQuiz
+    handleQuiz()
   }, []);
    
   // Convert notes object to an array of modules
