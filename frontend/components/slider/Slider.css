@@ -3,34 +3,53 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 700px; /* Set width to 600px */
-  height: 80vh; /* Set height to 700px */
+  width: 600px;
+  height: 80vh;
   padding: 20px;
   background-color: #f0f0f0;
   border-radius: 10px;
-  position: relative; /* Allow for content position control */
-  overflow: hidden; /* Hide the overflowing content during transitions */
-  
- left: 40%;
- transform: translateY(-87%);
- 
-}
-.animation-img{
-  height: 200px;
-  width:98%;
-  border: 2px solid black;
-  position:absolute;
-  top:0;
-  
+  position: relative;
+  overflow: hidden;
+  left: 40%;
+  transform: translateY(-87%);
 }
 
-/* Styles for the arrow buttons container */
+/* Animation image container */
+.animation-img {
+  height: 200px;
+  width: 98%;
+  border: 2px solid black;
+  position: absolute;
+  top: 0;
+}
+
+/* Progress Bar Container */
+.progress-bar {
+  position: absolute;
+  bottom: 10px; /* Place it at the bottom */
+  left: 30px;
+  width: 90%; /* Full width with some padding */
+  height: 10px; /* Set height */
+  background-color: #e0e0e0; /* Light gray */
+  border-radius: 5px; /* Rounded edges */
+  overflow: hidden; /* Clip the progress-fill overflow */
+}
+
+/* Progress Fill */
+.progress-fill {
+  height: 100%; /* Full height */
+  background-color: #bb86fc; /* Purple color */
+  width: 0%; /* Initial width */
+  transition: width 0.5s ease-in-out; /* Smooth transition */
+}
+
+/* Arrow Buttons Container */
 .arrow-buttons {
   margin-left: 2%;
   position: absolute;
-  padding:10px;
+  padding: 10px;
   top: 50%;
-  left:5px;
+  left: 5px;
   right: 10px;
   display: flex;
   justify-content: space-between;
@@ -39,13 +58,13 @@
   z-index: 10;
 }
 
-/* Styles for the arrow buttons */
+/* Arrow Buttons */
 .arrow-btn {
-  margin:10px;
+  margin: 10px;
   background-color: #bb86fc;
   color: white;
   box-shadow: 0 0.375em 0 #986ccd;
-  border:2px solid transparent;
+  border: 2px solid transparent;
   padding: 10px;
   font-size: 20px;
   cursor: pointer;
@@ -61,34 +80,34 @@
   outline: none;
 }
 
-/* Styles for the slider content */
+/* Slider Content */
 .slider-content {
   margin: 0 20px;
   font-size: 18px;
-  font-family: 'Lexend',Arial, Helvetica, sans-serif;
+  font-family: 'Lexend', Arial, Helvetica, sans-serif;
   font-weight: 700;
   text-align: center;
   width: 80%;
   position: absolute;
-  top:50%;
-  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Add sliding transition */
+  top: 50%;
+  transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Smooth sliding */
   opacity: 1;
 }
 
-/* Sliding effect when going to the left */
+/* Slide Left Effect */
 .slide-left {
-  transform: translateX(-100%); /* Slide content to the left */
-  opacity: 0; /* Fade out the previous content */
+  transform: translateX(-100%); /* Slide out to the left */
+  opacity: 0; /* Fade out */
 }
 
-/* Sliding effect when going to the right */
+/* Slide Right Effect */
 .slide-right {
-  transform: translateX(100%); /* Slide content to the right */
-  opacity: 0; /* Fade out the previous content */
+  transform: translateX(100%); /* Slide out to the right */
+  opacity: 0; /* Fade out */
 }
 
-/* Show content with no sliding effect */
+/* Show Content */
 .show {
-  transform: translateX(0); /* Show content at original position */
-  opacity: 1; /* Make content visible */
+  transform: translateX(0); /* Original position */
+  opacity: 1; /* Fully visible */
 }
